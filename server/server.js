@@ -10,10 +10,17 @@ app.use(express.static('server/public'));
 let calculations = require('./modules/calculations.js');
 
 app.get('/calculation', (req, res) =>{
+    console.log('in app.get')
     res.send(calculations);
 });
 
-
+app.post('/calculation', (req, res) => {
+    let calcBody = req.body;
+    console.log('calcBody is ', calcBody);
+    
+    calculations.unshift(calcBody);
+    res.sendStatus(201);
+})
 
 app.listen(PORT, () =>{
     console.log('listening on port', PORT);

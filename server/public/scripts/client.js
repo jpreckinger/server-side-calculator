@@ -48,7 +48,20 @@ function runCalc(){
     }
   }).then(function(response){
     getCalcs();
+    displayAnswer();
   }).catch(function(error){
     console.log('ERROR running calculation: ', error);
   })
 } // end runCalc
+
+function displayAnswer(){
+  $.ajax({
+    method: 'GET',
+    url: '/answer'
+  }).then(function(response){
+    $('#answer').empty();
+    $('#answer').append(response);
+  }).catch(function(error){
+    console.log('Failed to retrieve answer', error);
+  })
+}

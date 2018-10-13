@@ -1,6 +1,6 @@
 function equationRunner(equation){
-    let num1 = equation.num1;
-    let num2 = equation.num2;
+    let num1 = parseFloat(equation.num1);
+    let num2 = parseFloat(equation.num2);
     let operator = equation.operator;
      if ( operator == '+' ){
         let answer = num1 + num2;

@@ -28,9 +28,9 @@ function getCalcs() {
 
 //append the previous calculations to the DOM for viewing
 function appendCalcs(array){
-  // $('#data').empty();
+  $('#data').empty();
   for ( let calc of array ){
-    $('#data').append(`${calc.num1} ${calc.operator} ${calc.num2}`);
+    $('#data').append(`<p>${calc.num1} ${calc.operator} ${calc.num2}</p>`);
   }
 } // end appendCalcs
 

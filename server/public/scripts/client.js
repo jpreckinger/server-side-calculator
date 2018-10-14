@@ -19,7 +19,6 @@ function getCalcs() {
     method: 'GET',
     url: '/calculation'
   }).then(function(response){
-    console.log('appending calcs')
     appendCalcs(response);
   }).catch(function(error){
     console.log('ERROR: ', error);
@@ -28,6 +27,7 @@ function getCalcs() {
 
 //append the previous calculations to the DOM for viewing
 function appendCalcs(array){
+  console.log('in appendCalcs')
   $('#data').empty();
   for ( let calc of array ){
     $('#data').append(`<p>${calc.num1} ${calc.operator} ${calc.num2}</p>`);
@@ -47,18 +47,20 @@ function runCalc(){
       operator: operator
     }
   }).then(function(response){
-    getCalcs();
     displayAnswer();
+    getCalcs();
   }).catch(function(error){
     console.log('ERROR running calculation: ', error);
   })
 } // end runCalc
 
 function displayAnswer(){
+  console.log('in displayAnswer')
   $.ajax({
     method: 'GET',
     url: '/answer'
   }).then(function(response){
+    console.log('in .then /answer')
     $('#answer').empty();
     $('#answer').append(response);
   }).catch(function(error){

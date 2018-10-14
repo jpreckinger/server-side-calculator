@@ -26,8 +26,8 @@ app.post('/calculation', (req, res) => {
 })
 
 app.get('/answer', (req, res) =>{
-    // console.log('app.get part 2, electric boogaloo', answer);
-    res.send(answer);
+    console.log('app.get part 2, electric boogaloo', answer);
+    res.send(answer.toString());
 })
 
 

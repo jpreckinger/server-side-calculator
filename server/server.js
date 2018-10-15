@@ -8,8 +8,8 @@ app.use(bodyParser.json());
 app.use(express.static('server/public'));
 
 let calculations = require('./modules/calculations.js');
-let equationRunner = require('./modules/equationRunner.js');
-let answer;
+// this module was being used in base mode, no longer necessary in stretch
+// let equationRunner = require('./modules/equationRunner.js');
 
 app.get('/calculation', (req, res) =>{
     console.log('in app.get')
@@ -17,11 +17,11 @@ app.get('/calculation', (req, res) =>{
 });
 
 app.post('/calculation', (req, res) => {
-    let calcBody = req.body;
-    console.log('calcBody is ', calcBody);
-    answer = equationRunner(calcBody);
+    let equation = req.body;
+    console.log('equation is ', equation);
+    answer = eval(equation.equation);
     console.log(answer);
-    calculations.unshift(calcBody);
+    calculations.unshift(equation);
     res.sendStatus(201);
 })
 

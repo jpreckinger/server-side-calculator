@@ -1,13 +1,11 @@
 $( document ).ready( readyNow );
 
-let operator;
-
 function readyNow(){
   $('#equal-btn').on('click', runCalc );
-  $('.operator').on('click', function(){
-    operator = $(this).text();
+  $('.digit').on('click', function(){
+    $('#num-in').val($('#num-in').val() + $(this).text());
   });
-  $('#clear-btn').on('click', clearnInput);
+  $('#clear-btn').on('click', clearInput);
   getCalcs(); // retrieve previous calculations from the server
 } //end readyNow
 
@@ -27,20 +25,17 @@ function getCalcs() {
 function appendCalcs(array){
   $('#data').empty();
   for ( let calc of array ){
-    $('#data').append(`<p>${calc.num1} ${calc.operator} ${calc.num2}</p>`);
+    $('#data').append(`<p>${calc.equation}</p>`);
   }
 } // end appendCalcs
 
 function runCalc(){
-  let num1 = $('#num1-in').val();
-  let num2 = $('#num2-in').val();
-  $.ajax({
+let equation = $('#num-in').val();  
+$.ajax({
     method: 'POST',
     url: '/calculation',
     data: {
-      num1: num1,
-      num2: num2,
-      operator: operator
+      equation: equation
     }
   }).then(function(response){
     displayAnswer();
@@ -60,8 +55,8 @@ function displayAnswer(){
   }).catch(function(error){
     console.log('Failed to retrieve answer', error);
   })
-}
+} // end displayAnswer
 
-function clearnInput(){
+function clearInput(){
   $('input').val('');
-}
+} // end clearInput

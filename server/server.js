@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -12,15 +12,12 @@ let calculations = require('./modules/calculations.js');
 // let equationRunner = require('./modules/equationRunner.js');
 
 app.get('/calculation', (req, res) =>{
-    console.log('in app.get')
     res.send(calculations);
 });
 
 app.post('/calculation', (req, res) => {
     let equation = req.body;
-    console.log('equation is ', equation);
     answer = eval(equation.equation);
-    console.log(answer);
     calculations.unshift(equation);
     res.sendStatus(201);
 })

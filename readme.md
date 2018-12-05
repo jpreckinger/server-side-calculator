@@ -1,46 +1,44 @@
-# Weekend Challenge 2 - Server Side Calculator
+# Server-side Calculator
 
-Welcome to the second weekend challenge!
+This application allows users to enter information, and receive simple calculations back. The information is sent from the client to the server, where the calculations are performed, and then return to the client to be displayed on the DOM.
 
-You are going to be building a server-side calculator. The logic for the calculator **must** be implemented on the server. 
+## Built With
 
-## Required Features
+JavaScript
+jQuery
+Node.js
+Express.js
+Bootstrap
 
-### Calculator:
-Create a user interface where the user can input two values (2 input elements) and the select type of mathematical operation. When the submit, `=` button is clicked, capture this input, bundle it up in an object, and then send this object to the server via a POST. There should also be a 'C' button that will clear the user input fields.
+## Getting Started
 
-Build out the server-side logic to compute the numbers as appropriate. The server should be able to handle Addition, Subtraction, Multiplication, and Division. Once the calculation is complete, send it back to the client in an object where it should be displayed on the DOM.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-> NOTE: You can send an object back as a response to a POST request or follow up the POST with a GET request to retrieve the data. Using a GET request to follow up is more common at Prime and will put you in a better position working on the History feature below.
+### Prerequisites
 
-### History:
-Keep a historical record of all math operations on the server. Display a list of all previous calculations on the page when it loads. Update the list when a new calculation is made.
+- [Node.js](https://nodejs.org/en/)
 
----
-![base mode interface](images/baseMode_interface.gif)
----
-## Stretch Goals
+### Installing
 
-- Convert the interface to look and behave like a calculator as shown below.
+1. Download this project.
+2. `npm install`
+3. `npm start`
 
-  *Interfaces that mirror real world objects are often more intuitive and self-explanatory for users.*
+### Completed Features
 
----
-![calculator interface](images/stretchGoal_interface.gif)
----
+High level list of items completed.
 
-- Only allow the POST call to happen if all necessary input is ready.
+- [x] Standard calculator interface
+- [x] Functional basic equations
 
-  *Data integrity is superfluously important! Sometimes users hit tje "go button" without fully inputting the needed fields. Show an alert if they left something empty and don't send bad or incomplete data to the server.*
+### Next Steps
 
-- Allow a user to clear the history by clicking on a button. Technically this shouldn't be a GET or a POST. Look into making a DELETE request!
+- [ ] Better Styling
 
-  *GETs are used to, well, get information from the server. POSTs are used to send new info to the server. DELETEs are used for, you guessed it, deleting info already on the server.*
+## Authors
 
-- Allow a user to click on an entry in the History list to re-run that calculation. This should display the answer on the calculator interface like a normal calculation.
+* Jonathan Reckinger
 
-  *Anticipating a user's wants and adding the feature in the interface is often a logical progression that ends up in stretch goals for project.*
+## Acknowledgments
 
-- Deploy to Heroku!
-
-  *Deploying a project makes it available to the masses and is a necessary step for which to prepare when planning a project.*
+* Starter code by Prime Digital Academy

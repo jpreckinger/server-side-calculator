@@ -8,32 +8,36 @@
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
   </head>
   <body>
-    <h1>Weekend Challenge #2</h1>
-    <h2>Server Side Calculator</h2>
-    <section id="interface">
+    <h1 class="jumbotron">Weekend Challenge #2</h1>
+    <section id="interface" class="container"></section>
+      <h2>Server Side Calculator</h2>
       <div>
         <input type="text" placeholder="Input" id="num-in">
-        <button id="clear-btn" class="btn btn-danger btn-color btn-bg-color btn-md col-xs-2 margin">C</button>
-        <br>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">7</button>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">8</button>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">9</button>
-        <button class="operator digit btn btn-warning btn-color btn-bg-color btn-md col-xs-2 margin">+</button>
-        <br>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">4</button>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">5</button>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">6</button>
-        <button class="operator digit btn btn-warning btn-color btn-bg-color btn-md col-xs-2 margin">-</button>
-        <br>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">1</button>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">2</button>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">3</button>
-        <button class="operator digit btn btn-warning btn-color btn-bg-color btn-md col-xs-2 margin">*</button>
-        <br>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">0</button>
-        <button class="digit btn btn-primary btn-color btn-bg-color btn-md col-xs-2 margin">.</button>
-        <button id="equal-btn" class="btn btn-success btn-color btn-bg-color btn-md col-xs-2 margin">=</button>
-        <button class="operator digit btn btn-warning btn-color btn-bg-color btn-md col-xs-2 margin">/</button>        
+        <button id="clear-btn" class="btn btn-danger btn-color btn-bg-color btn-lg col-xs-2 margin">C</button>
+        <div class="row">
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">7</button>
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">8</button>
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">9</button>
+          <button class="operator digit btn btn-warning btn-color btn-bg-color btn-lg col-xs-2 m-2">+</button>
+        </div>
+        <div class="row">
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">4</button>
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">5</button>
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">6</button>
+          <button class="operator digit btn btn-warning btn-color btn-bg-color btn-lg col-xs-2 m-2">-</button>
+        </div>
+        <div class="row">
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">1</button>
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">2</button>
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">3</button>
+          <button class="operator digit btn btn-warning btn-color btn-bg-color btn-lg col-xs-2 m-2">*</button>
+        </div>
+        <div class="row">
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">0</button>
+          <button class="digit btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 m-2">.</button>
+          <button id="equal-btn" class="btn btn-success btn-color btn-bg-color btn-lg col-xs-2 m-2">=</button>
+          <button class="operator digit btn btn-warning btn-color btn-bg-color btn-lg col-xs-2 m-2">/</button>   
+        </div>     
       </div>
     </section>
     <div id="answer">
